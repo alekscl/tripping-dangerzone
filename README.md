@@ -1,4 +1,4 @@
 tripping-dangerzone
 ===================
 
-This is gone by my repo for the real python exercises. 
+This is going to be my repo for the real python exercises. 
