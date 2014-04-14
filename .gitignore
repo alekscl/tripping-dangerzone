@@ -52,3 +52,8 @@ coverage.xml
 # Sphinx documentation
 docs/_build/
 
+# vim temporary files
+*.swp
+
+# sqlite files with extension .db
+*.db
