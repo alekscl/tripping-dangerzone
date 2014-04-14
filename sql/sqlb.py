@@ -17,6 +17,7 @@ def main():
         values ('San Francisco', 'CA', 800000);
         """
     )
+
     conn.commit()
     conn.close()
 
