@@ -35,30 +35,47 @@ def destroytable():
         )
 
 
+def executeSelect(key, value):
+    with sqlite3.connect("newnum.db") as connection:
+        c = connection.cursor()
+        c.execute(value)
+        result = c.fetchone()
+        print("%s: %s\n\n\n" % (key, result[0]))
+
+
 def main():
 
     createtable()
 
+    aggfunct = {
+        "avg": "select avg(rnd) from random;",
+        "max": "select max(rnd) from random;",
+        "min": "select min(rnd) from random;",
+        "sum": "select sum(rnd) from random;"
+    }
+
     while True:
+
         print(
             """
-            1 => Print averege
+            1 => Print average
             2 => Print maximum
             3 => Print minimum
             4 => Print summation
             5 => Exit
             """
         )
+
         x = raw_input("Select option: ")
         if x in ['1', '2', '3', '4', '5']:
             if x == '1':
-                print("average")
+                executeSelect("Average", aggfunct.get("avg"))
             if x == '2':
-                print('maximum')
+                executeSelect("Maximum", aggfunct.get("max"))
             if x == '3':
-                print('minimun')
+                executeSelect("Minimum", aggfunct.get("min"))
             if x == '4':
-                print('summation')
+                executeSelect("Summation", aggfunct.get("sum"))
             if x == '5':
                 break
         else:
