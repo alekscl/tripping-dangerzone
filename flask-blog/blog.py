@@ -1,5 +1,6 @@
 #!/usr/bin/env python
-from flask import Flask, render_template, request, session, flash, redirect, url_for, g
+from flask import Flask, render_template, request, session, flash, redirect
+from flask import url_for, g
 import sqlite3
 
 # configuration
@@ -15,6 +16,16 @@ app.config.from_object(__name__)
 def connect_db():
     """ function used for connecting to the database """
     return sqlite3.connect(app.config['DATABASE'])
+
+
+@app.route("/")
+def login():
+    return render_template('login.html')
+
+
+@app.route("/main")
+def main():
+    return render_template('main.html')
 
 
 if __name__ == "__main__":
