@@ -6,7 +6,7 @@ def main():
     url = "http://httpbin.org/post"
     data = {'fname': 'Michael', 'lname': 'Herman'}
     r = requests.post(url, data=data)
-    print r
+    print r.content
 
 
 if __name__ == "__main__":
