@@ -19,7 +19,7 @@ def main():
     for route in output["routes"]:
         for leg in route["legs"]:
             for step in leg["steps"]:
-                print step["distance"]
+                print step
 
 
 if __name__ == "__main__":
