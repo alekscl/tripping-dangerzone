@@ -20,3 +20,7 @@ def blog_entry(request, year, id):
         return HttpResponse(t.render(c))
     except Post.DoesNotExist:
         return index(request)
+
+
+def new_post(request):
+    pass
