@@ -5,9 +5,9 @@
     <title>a little blog app</title>
   </head>
   <body>
-    <div style="text-align: center;">
-      <h1>Bloggy: a blog app.</h1>
-      <table style="width: 50%;" align="center" border="3" cellpadding="1" cellspacing="1">
+    <div style="text-align: justify;">
+      <h1 style="text-align: center">Bloggy: a blog app.</h1>
+      <!-- <table style="width: 50%;" align="center" border="3" cellpadding="1" cellspacing="1">
         <tbody>
 	{% for post in latest_posts %}
           <tr align="justify">
@@ -18,7 +18,19 @@
           </tr>
 	  {% endfor %}
         </tbody>
-      </table>
+      </table> -->
+      {% if latest_posts %}
+      <ul>
+      {% for post in latest_posts %}
+      <li>{{ post.title }}
+      <p><em> {{ post.created_at }}</em></p>
+      <p>{{ post.content }}</p>
+      </li>
+      {% endfor %}
+      </ul>
+      {% else %}
+      There are't any posts
+      {% endif %}
     </div>
   </body>
 </html>
