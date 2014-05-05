@@ -4,5 +4,5 @@ from blog import views
 
 urlpatterns = patterns(
     '',
-    # url(r'^$', 'bloggy.views.home', name='home'),
+    url(r'^$', views.index, name='index'),
 )
