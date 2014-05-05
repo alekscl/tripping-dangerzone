@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=windows-1252" http-equiv="content-type">
+    <title>new blog entry</title>
+  </head>
+  <body>
+    <p><br>
+    <form action="/blog/newpost/" method="post">
+	    {% csrf_token %}
+    	    {{ form.as_ul}}
+    <input type="submit" value="submit"/>
+    </form>
+    </p>
+  </body>
+</html>
