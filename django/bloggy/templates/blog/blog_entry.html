@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=windows-1252" http-equiv="content-type">
+    <title>Blog entry</title>
+  </head>
+  <body>
+    <p><br>
+    </p>
+    {% if post %}
+    <table style="width: 40%;" border="2" cellpadding="3" cellspacing="3" align="center">
+      <thead>
+        <tr>
+		<th>{{ post.title }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+		<td>{{ post.content }}</td>
+        </tr>
+        <tr>
+		<td><em>{{ post.created_at }}</em></td>
+        </tr>
+      </tbody>
+    </table>
+    {% else %}
+    Nothing to show
+    {% endif %}
+    <p>Had enough? Return <a href="/blog/">home</a> 
+  </body>
+</html>

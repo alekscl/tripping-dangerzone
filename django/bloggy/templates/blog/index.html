@@ -22,7 +22,7 @@
       {% if latest_posts %}
       <ul>
       {% for post in latest_posts %}
-      <li>{{ post.title }}
+      <li><a href="/blog/{{ post.created_at.year }}/{{ post.id}}/">{{ post.title }}</a>
       <p><em> {{ post.created_at }}</em></p>
       <p>{{ post.content }}</p>
       </li>
@@ -31,6 +31,7 @@
       {% else %}
       There are't any posts
       {% endif %}
+      <p>Add a new <a href="/blog/newpost/">entry</a></p>
     </div>
   </body>
 </html>
